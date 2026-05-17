@@ -30,10 +30,10 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inconsolata.variable} ${oneMono.variable} h-full antialiased`}
-    >
+    > 
       <body className="min-h-full flex flex-col">
         <Navbar/>
-        <div style={{ width: '100%', height: '600px', position: 'relative', zIndex: 1}}>
+        <div style={{ width: '100%', height: '100%', position: 'relative', zIndex: 1}}>
           <div className="z-[-1] absolute w-[100%] h-[100%]">
             <PixelBlast
               variant="square"
@@ -44,7 +44,7 @@ export default function RootLayout({
               pixelSizeJitter={0}
               enableRipples
               rippleSpeed={0.4}
-              rippleThickness={0.12}
+              rippleThickness={0.03}
               rippleIntensityScale={1.5}
               liquid={false}
               liquidStrength={0.12}

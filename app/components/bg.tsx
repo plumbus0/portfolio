@@ -301,7 +301,7 @@ void main(){
   float speed     = uRippleSpeed;
   float thickness = uRippleThickness;
   const float dampT     = 1.0;
-  const float dampR     = 10.0;
+  const float dampR     = 35.0;
 
   if (uEnableRipples == 1) {
     for (int i = 0; i < MAX_CLICKS; ++i){

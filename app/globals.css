@@ -7,6 +7,7 @@
   --org: #DF7C3E;
   --col1: #659A55;
   --col2: #225138;
+  --colTran: #df7c3e4c;
 }
 
 @theme inline {
@@ -27,7 +28,7 @@
 }
 
 nav {
-  width: 100vw;
+  width: 100%;
 }
 
 body {
@@ -36,8 +37,80 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1{
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size:x-large;
+}
+
+h1, h2{
   display: block;
-  font-weight:bold;
-  font-size: 2em;
+  font-weight: bold;
+  pointer-events: all;
+}
+
+p{
+  color: var(--col2);
+  font-size: large;
+}
+
+
+.box {
+  position: relative;
+  width: 300px;
+  height: 180px;
+  padding: 20px;
+  background: #111;
+  color: white;
+}
+
+.corner {
+  margin: -10px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--colTran);
+  border-style: solid;
+}
+
+/* Top Left */
+.top-left {
+  top: 0;
+  left: 0;
+  border-width: 5px 0 0 5px;
+}
+
+/* Top Right */
+.top-right {
+  top: 0;
+  right: 0;
+  border-width: 5px 5px 0 0;
+}
+
+/* Bottom Left */
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 5px 5px;
+}
+
+/* Bottom Right */
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-width: 0 5px 5px 0;
+}
+
+.skillIcon {
+  pointer-events: all;
+}
+
+.skillIcon:hover{
+  color: var(--org);
+}
+
+.title_port:hover{
+  color: var(--org);
 }
