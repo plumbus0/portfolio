@@ -68,7 +68,6 @@ export default function ProjectMini({skill} : {skill: string}){
           <div className="proj-display w-full">
             <div className="w-full text-center font-bold">
               <h2>{e.name}</h2>
-              {e.svg}
             </div>
 
             {/* add the icon  */}

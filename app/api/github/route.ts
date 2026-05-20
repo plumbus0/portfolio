@@ -58,7 +58,17 @@ export async function GET() {
     for (const tag of project.repositoryTopics.nodes) {
       tags.push(tag.topic.name);
     }
-
+    if (project.name === "pulse") {
+      allProj.projects.push({
+        name: project.name,
+        description: project.description,
+        url: project.url,
+        icon: `https://raw.githubusercontent.com/${username}/${project.name}/main/icon.svg`,
+        homepageUrl: 'https://pulse-5xso.vercel.app/',
+        repositoryTopics: ['react', 'ts', 'next-js','tailwind-css', 'supabase'],
+      } as proj);
+      continue;
+    }
     allProj.projects.push({
       name: project.name,
       description: project.description,

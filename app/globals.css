@@ -156,3 +156,18 @@ p{
   margin-bottom: 5px;
   color: var(--org);
 }
+.codeLinkIcon>svg{
+  width: 2rem;
+}
+.codeLinkIcon:hover{
+  color: var(--org);
+}
+.projHead{
+  pointer-events: all;
+}
+
+.projHead:hover>div>svg{
+  margin-top: -5px;
+  margin-bottom: 5px;
+  color: var(--org);
+}

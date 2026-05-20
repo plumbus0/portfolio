@@ -4,7 +4,6 @@ import {  profile, resume} from "./utilities/myArt";
 import { CodingExperience } from "./components/codingExp";
 
 export default function Home() {
-  // const [skill, setSkill] = useState('');
   
   return (  
     <div className="flex flex-col flex-1 items-center justify-center font-sans pointer-events-none">

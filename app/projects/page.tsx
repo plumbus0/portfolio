@@ -1,5 +1,8 @@
+import { Metadata } from "next";
 import { ProjectsAll } from "../components/projectMain";
-
+export const metadata: Metadata = {
+  title: "Arya's portfolio | Projects"
+}
 export default async function projects(
   {searchParams}: {searchParams: Promise<{ view?: string }>}
 ) {

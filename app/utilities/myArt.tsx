@@ -1127,3 +1127,49 @@ export const defaultIcon = (
   <rect x="24" y="23" width="1" height="1" fill="currentColor"/>
 </svg>
 );
+
+export const linkArrow = (
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <rect x="23" y="13" width="1" height="1" fill="currentColor"/>
+  <rect x="24" y="13" width="1" height="1" fill="currentColor"/>
+  <rect x="25" y="13" width="1" height="1" fill="currentColor"/>
+  <rect x="26" y="13" width="1" height="1" fill="currentColor"/>
+  <rect x="27" y="13" width="1" height="1" fill="currentColor"/>
+  <rect x="28" y="13" width="1" height="1" fill="currentColor"/>
+  <rect x="29" y="13" width="1" height="1" fill="currentColor"/>
+  <rect x="30" y="13" width="1" height="1" fill="currentColor"/>
+  <rect x="31" y="13" width="1" height="1" fill="currentColor"/>
+  <rect x="32" y="13" width="1" height="1" fill="currentColor"/>
+  <rect x="33" y="13" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="13" width="1" height="1" fill="currentColor"/>
+  <rect x="33" y="14" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="14" width="1" height="1" fill="currentColor"/>
+  <rect x="32" y="15" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="15" width="1" height="1" fill="currentColor"/>
+  <rect x="31" y="16" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="16" width="1" height="1" fill="currentColor"/>
+  <rect x="30" y="17" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="17" width="1" height="1" fill="currentColor"/>
+  <rect x="29" y="18" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="18" width="1" height="1" fill="currentColor"/>
+  <rect x="28" y="19" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="19" width="1" height="1" fill="currentColor"/>
+  <rect x="27" y="20" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="20" width="1" height="1" fill="currentColor"/>
+  <rect x="26" y="21" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="21" width="1" height="1" fill="currentColor"/>
+  <rect x="25" y="22" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="22" width="1" height="1" fill="currentColor"/>
+  <rect x="24" y="23" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="23" width="1" height="1" fill="currentColor"/>
+  <rect x="23" y="24" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="24" width="1" height="1" fill="currentColor"/>
+  <rect x="22" y="25" width="1" height="1" fill="currentColor"/>
+  <rect x="34" y="25" width="1" height="1" fill="currentColor"/>
+  <rect x="21" y="26" width="1" height="1" fill="currentColor"/>
+  <rect x="20" y="27" width="1" height="1" fill="currentColor"/>
+  <rect x="19" y="28" width="1" height="1" fill="currentColor"/>
+  <rect x="18" y="29" width="1" height="1" fill="currentColor"/>
+  <rect x="17" y="30" width="1" height="1" fill="currentColor"/>
+</svg>
+);

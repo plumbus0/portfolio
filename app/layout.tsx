@@ -17,8 +17,8 @@ const oneMono = JetBrains_Mono({
 
 
 export const metadata: Metadata = {
-  title: "arya prakash portfolio",
-  description: "arya prakash portfolio website",
+  title: "Arya's portfolio",
+  description: "Arya prakash portfolio website",
   icons: {
     icon: "/icon.svg",
     shortcut: "/favicon.ico",
