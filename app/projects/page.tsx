@@ -1,7 +1,16 @@
+import { ProjectsAll } from "../components/projectMain";
 
-export default function proj() {
+export default async function projects(
+  {searchParams}: {searchParams: Promise<{ view?: string }>}
+) {
+  const preOpen = (await searchParams).view;
 
-return (<>
-
-  </>);
+  return (
+  <div className="flex flex-col flex-1 items-center justify-center font-sans pointer-events-none">
+    <div className="flex flex-1 w-full max-w-6xl flex-col items-center justify-between py-32 px-16 sm:items-start">
+      <main className="text-[var(--txt)] w-full">
+        <ProjectsAll/>
+      </main>
+    </div>
+  </div>);
 }

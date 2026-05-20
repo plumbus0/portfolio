@@ -7,6 +7,7 @@
   --org: #DF7C3E;
   --col1: #659A55;
   --col2: #225138;
+  --greenTran: #659a553b;
   --colTran: #df7c3e4c;
 }
 
@@ -19,11 +20,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #FFFFF3;
-    --txt: #5d8b6c;
-    --org: #DF7C3E;
-    --col1: #659A55;
-    --col2: #225138;
+  --background: #FFFFF3;
+  --dark: #1B2421;
+  --txt: #5d8b6c;
+  --org: #DF7C3E;
+  --col1: #659A55;
+  --col2: #225138;
+  --greenTran: #659a553b;
+  --colTran: #df7c3e4c;
   }
 }
 
@@ -39,6 +43,7 @@ body {
 
 h1 {
   font-size: 2rem;
+  width: fit-content;
 }
 
 h2 {
@@ -53,6 +58,7 @@ h1, h2{
 
 p{
   color: var(--col2);
+  margin: 10px;
   font-size: large;
 }
 
@@ -106,11 +112,47 @@ p{
 .skillIcon {
   pointer-events: all;
 }
-
-.skillIcon:hover{
+.skillCard{ 
+  cursor: pointer;
+  pointer-events: all;
+}
+.skillCard:hover > div > .skillIcon {
+  color: var(--org);
+}
+.skillIconBtn.active{
+  color: var(--org);
+}
+.title_port:hover{
   color: var(--org);
 }
 
-.title_port:hover{
+.minNav{
+  flex-direction: column;
+  align-content: center;
+}
+
+.card:hover>.proj-display>.w-full{
+  color: var(--org);
+}
+
+
+.ProjCard{
+  border-color: #dbe8cf;
+  border-style: solid;
+  width: 17px;
+  height: 17px;
+  margin: -2px;
+  position: absolute;
+}
+
+.containIcon>svg{
+  transition-duration: 0.1s;
+  width:  6rem;
+  height: 6rem;
+}
+
+.card:hover>.proj-display>.justify-center>.containIcon>svg{
+  margin-top: -5px;
+  margin-bottom: 5px;
   color: var(--org);
 }

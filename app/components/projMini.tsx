@@ -1,0 +1,113 @@
+'use client'
+import { useEffect, useState } from "react";
+import { proj } from "../api/github/types";
+import { defaultIcon } from "../utilities/myArt";
+import Link from "next/link";
+
+export default function ProjectMini({skill} : {skill: string}){
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(`${baseUrl}/api/github`);
+        const json = await res.json();
+        const projectsWithSvg = await Promise.all(
+          json.projects.map(async (project: proj) => {
+                let svg = "";
+          try {
+            const res = await fetch(project.icon);
+
+            if (res.ok) {
+              svg = await res.text();
+            } else {
+              svg = '';
+            }
+
+          } catch {
+            svg = '';
+          }
+
+          return {
+            ...project,
+            svg
+          };
+
+          })
+        );
+
+        setData(projectsWithSvg);
+        
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
+  if (loading) return <div className="p-1 m-2"> loading projects from github...</div>;
+
+  return (
+  <div className="grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] gap-4">
+
+    {data.map((e: proj, i: number) => {
+      return (
+        <Link key={i} href={`/projects?view=${e.name}`}>
+        <div
+          className="bg-[var(--background)] cursor-pointer duration-100 flex flex-wrap content-between card capitalize border-[var(--colTran)] pointer-events-auto relative border-2 border-dashed p-3 m-3 w-[95%]"
+        >
+          <span className="ProjCard top-left"></span>
+          <span className="ProjCard top-right"></span>
+          <span className="ProjCard bottom-left"></span>
+          <span className="ProjCard bottom-right"></span>
+          
+          <div className="proj-display w-full">
+            <div className="w-full text-center font-bold">
+              <h2>{e.name}</h2>
+              {e.svg}
+            </div>
+
+            {/* add the icon  */}
+            <div className="w-full text-[var(--txt)] mx-auto flex justify-center">
+              {(e.svg == '')? <div className="containIcon duration-100">{defaultIcon}</div>: 
+              <div className="containIcon duration-100"
+                dangerouslySetInnerHTML={{
+                  __html: e.svg
+              }}/>
+              }
+            </div>
+            {/* describe */}
+            <div>
+              {e.description}
+            </div>
+          </div>
+
+          <div className="w-full">
+            {/* tags */}
+            <div className="mt-1 mt-1 border-2 border-dashed w-[100%] text-[var(--colTran)]"></div>
+            <div className="mt-3 flex flex-col-reverse">
+              <div className="flex flex-wrap">
+                {Array.from(e.repositoryTopics,(tag, i)=>{
+                  return <span className={`${tag.toLowerCase() == skill.toLowerCase()? 'text-[var(--org)]':''} font-bold flex items-center w-auto text-nowrap ml-1 mr-1`} key={i}> 
+                    <div className="w-[4px] h-[4px] mr-[10px] bg-[var(--org)]"></div>
+                    {tag.replace("-",".")}
+                  </span>;
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+        </Link>
+      );
+    })}
+
+  </div>
+);
+}
+
+
+

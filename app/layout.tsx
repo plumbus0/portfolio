@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inconsolata, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer";
 import PixelBlast from "./components/bg";
@@ -16,9 +15,15 @@ const oneMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
   title: "arya prakash portfolio",
   description: "arya prakash portfolio website",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
