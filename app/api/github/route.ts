@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
-import { proj, projectMini } from './types';
+import { proj, projectMini } from '../../types';
 
 const token = process.env.GITHUB_TOKEN;
-const username = "plumbus0";
+export const username = "plumbus0";
 
 async function getPinnedRepos() {
   const query = `

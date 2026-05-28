@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* ========================= THEME 0 ========================= */
 :root {
   --background: #FFFFF3;
   --dark: #1B2421;
@@ -8,7 +9,102 @@
   --col1: #659A55;
   --col2: #225138;
   --greenTran: #659a553b;
+  --greenTranSolid : #dbe8cf;
   --colTran: #df7c3e4c;
+  --bgTran:#fffff35c;
+
+  --theme_:#DF7C3E;
+  --theme_1:#e937dd;
+  --theme_2:#3F84E5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --background: #FFFFF3;
+    --dark: #1B2421;
+    /* green */
+    --txt: #5d8b6c;
+    --col1: #659A55;
+    --col2: #225138;
+    --greenTran: #659a553b;
+    --greenTranSolid : #dbe8cf;
+    --bgTran:#fffff35c;
+    /* orange */
+    --org: #DF7C3E;
+    --colTran: #df7c3e4c;
+  }
+}
+[data-theme="-dark"]  {
+  --background: #0c110f;
+  --dark: #0f172a;
+    /* green */
+    --txt: #5d8b6c;
+    --col1: #659A55;
+    --col2: #3c9767;
+    --greenTran: #659a553b;
+    --greenTranSolid : #dbe8cf;
+    --bgTran:#1b242178;
+    /* orange */
+    --org: #DF7C3E;
+    --colTran: #df7c3e4c;
+}
+/* ========================= THEME 1 ========================= */
+[data-theme="1"] {
+  --dark: #0f172a;
+  --background: #ffffff;
+  
+  --txt: #8e476c;
+  --col1: #B09398;
+  --col2: #9B6A6C;
+  --greenTran: #9b6a6c7b;
+  --greenTranSolid : #cfb7b8;
+  --bgTran:#ffffff6c;
+
+  --org: #e937dd;
+  --colTran: #dc18cf28;
+}
+[data-theme="1-dark"] {
+  --dark: #0f172a;
+  --background: #000e2c;
+  --bgTran:#000e2c70;
+  
+  --txt: #8e476c;
+  --col1: #B09398;
+  --col2: #9B6A6C;
+  --greenTran: #d27ccb7b;
+  --greenTranSolid : #f19bee;
+
+  --org: #e937dd;
+  --colTran: #dc18cf28;
+}
+/* ========================= THEME 2 ========================= */
+[data-theme="2"] {
+  --dark: #0f172a;
+  --background: #ffffff;
+  --bgTran:#ffffff6c;
+
+  --txt: #794c00;
+  --col1: rgb(225, 203, 125);
+  --col2: #fa7000;
+  --greenTran: rgba(255, 174, 74, 0.49);
+  --greenTranSolid : #ffcfa8;
+
+  --org: #3F84E5;
+  --colTran: #3f84e564;
+}
+[data-theme="2-dark"] {
+  --dark: #0f172a;
+  --background: #05000f;
+  --bgTran:#0d002767;
+
+  --txt: #844b0b;
+  --col1: rgb(225, 203, 125);
+  --col2: #fa7000;
+  --greenTran: rgba(255, 174, 74, 0.49);
+  --greenTranSolid : #001c81;
+ 
+  --org: #3F84E5;
+  --colTran: #3f84e564;
 }
 
 @theme inline {
@@ -16,19 +112,6 @@
   --color-dark: var(--dark);
   --font-sans: var(--inconsolata);
   --font-mono: var(--oneMono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-  --background: #FFFFF3;
-  --dark: #1B2421;
-  --txt: #5d8b6c;
-  --org: #DF7C3E;
-  --col1: #659A55;
-  --col2: #225138;
-  --greenTran: #659a553b;
-  --colTran: #df7c3e4c;
-  }
 }
 
 nav {
@@ -137,7 +220,7 @@ p{
 
 
 .ProjCard{
-  border-color: #dbe8cf;
+  border-color: var(--greenTranSolid);
   border-style: solid;
   width: 17px;
   height: 17px;
@@ -151,11 +234,18 @@ p{
   height: 6rem;
 }
 
+.bounce{
+  margin-top: -5px;
+  margin-bottom: 5px;
+  color: var(--org);
+}
+
 .card:hover>.proj-display>.justify-center>.containIcon>svg{
   margin-top: -5px;
   margin-bottom: 5px;
   color: var(--org);
 }
+
 .codeLinkIcon>svg{
   width: 2rem;
 }
@@ -170,4 +260,37 @@ p{
   margin-top: -5px;
   margin-bottom: 5px;
   color: var(--org);
+}
+
+.markDown>img{
+  display: none;
+}
+
+.markDown{
+  overflow: hidden;
+  transition: max-height 1s ease;
+}
+.preview-frame{
+  overflow: auto;
+  scrollbar-color: var(--txt) var(--background);
+}
+.miniIcon>svg{
+  width : 3rem;
+  height: 3rem;
+}
+.miniFavicon>svg{
+  min-height: 22px;
+  max-height: 23px;
+  min-width : 22px;
+  max-width : 23px;
+}
+
+.iconMoreInfo>svg{
+  width: 11rem;
+  height: 11rem;
+}
+
+.darkModeIcon>div>svg{
+  height: 3rem;
+  width : 3rem;
 }

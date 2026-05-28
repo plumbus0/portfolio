@@ -3,7 +3,9 @@ import { Inconsolata, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer";
-import PixelBlast from "./components/bg";
+import NextTopLoader from "nextjs-toploader";
+// import PixelBlast from "./components/bg";
+import { LoadColours } from "./components/loadColours";
 
 const inconsolata = Inconsolata({
   variable: "--inconsolata",
@@ -38,27 +40,16 @@ export default function RootLayout({
     > 
       <body className="min-h-full flex flex-col">
         <Navbar/>
+        <LoadColours/>
         <div style={{ width: '100%', height: '100%', position: 'relative', zIndex: 1}}>
-          <div className="z-[-1] absolute w-[100%] h-[100%]">
-            <PixelBlast
-              variant="square"
-              pixelSize={4}
-              color="#f5e7d5"
-              patternScale={2}
-              patternDensity={0.95}
-              pixelSizeJitter={0}
-              enableRipples
-              rippleSpeed={0.4}
-              rippleThickness={0.03}
-              rippleIntensityScale={1.5}
-              liquid={false}
-              liquidStrength={0.12}
-              liquidRadius={1.2}
-              liquidWobbleSpeed={5}
-              speed={0.5}
-              edgeFade={0.25}
-              transparent
+          <div className="w-full mt-20">
+            <NextTopLoader
+              color="var(--org)"
+              showSpinner={false}
             />
+          </div>
+
+          <div className="z-[-1] absolute w-[100%] h-[100%]">
           </div>
           {children}
         </div>

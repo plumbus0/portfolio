@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-import { proj } from "../api/github/types";
+import { proj } from "../types";
 import { defaultIcon } from "../utilities/myArt";
 import Link from "next/link";
 
@@ -8,9 +8,12 @@ export default function ProjectMini({skill} : {skill: string}){
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState(false);
+  const [val, setVal] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
+      console.log("get data")
       try {
         const res = await fetch(`${baseUrl}/api/github`);
         const json = await res.json();
@@ -41,19 +44,30 @@ export default function ProjectMini({skill} : {skill: string}){
         setData(projectsWithSvg);
         
       } catch (error) {
-        console.error("Failed to fetch data:", error);
+        setErr(true);
       } finally {
         setLoading(false);
       }
     }
     fetchData();
-  }, []);
+  }, [val]);
 
   if (loading) return <div className="p-1 m-2"> loading projects from github...</div>;
+  if (err || data == null) return (
+    <div>Failed to fetch data :[
+      <br />
+      <button onClick={()=>{setErr(false);setVal(!val)}}>
+        <div className="flex justify-between flex flex-col sm:flex-row cursor-pointer border-[var(--txt)] pointer-events-auto border-2 border-dashed p-1 m-1">
+          <div className="codeLinkIcon">
+            click me to try again
+          </div>
+        </div>
+      </button>
+    </div>
+  );
 
   return (
   <div className="grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] gap-4">
-
     {data.map((e: proj, i: number) => {
       return (
         <Link key={i} href={`/projects?view=${e.name}`}>
@@ -80,9 +94,9 @@ export default function ProjectMini({skill} : {skill: string}){
               }
             </div>
             {/* describe */}
-            <div>
+            <p>
               {e.description}
-            </div>
+            </p>
           </div>
 
           <div className="w-full">
