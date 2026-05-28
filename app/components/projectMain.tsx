@@ -5,7 +5,6 @@ import { proj } from "../types";
 import { Project } from "./project";
 
 export function ProjectsAll({ view }: { view: string }) {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState(false);
@@ -24,7 +23,7 @@ export function ProjectsAll({ view }: { view: string }) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch(`${baseUrl}/api/github`);
+        const res = await fetch(`/api/github`);
         const json = await res.json();
         const projectsWithSvg = await Promise.all(
           json.projects.map(async (project: proj) => {
