@@ -5,7 +5,7 @@ import { defaultIcon } from "../utilities/myArt";
 import Link from "next/link";
 
 export default function ProjectMini({skill} : {skill: string}){
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  // const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState(false);
@@ -15,7 +15,7 @@ export default function ProjectMini({skill} : {skill: string}){
     async function fetchData() {
       console.log("get data")
       try {
-        const res = await fetch(`${baseUrl}/api/github`);
+        const res = await fetch(`/api/github`);
         const json = await res.json();
         const projectsWithSvg = await Promise.all(
           json.projects.map(async (project: proj) => {
