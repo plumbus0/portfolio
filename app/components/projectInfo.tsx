@@ -35,9 +35,9 @@ export function ProjectInfo({ url, markDownTxt, setMarkDownTxt}: { url: string, 
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeHighlight, rehypeRaw]}
             components={{
-              img: ({ children }) => {
-                <div className='none'></div>
-              },
+              img: ({ children }) => (
+                <img className='none'></img>
+              ),
               ul: ({ children }) => (
                 <ul className="list-[square] ml-6 mb-6">
                   {children}
