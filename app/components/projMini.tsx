@@ -13,7 +13,6 @@ export default function ProjectMini({skill} : {skill: string}){
 
   useEffect(() => {
     async function fetchData() {
-      console.log("get data")
       try {
         const res = await fetch(`/api/github`);
         const json = await res.json();
@@ -40,11 +39,11 @@ export default function ProjectMini({skill} : {skill: string}){
 
           })
         );
-
         setData(projectsWithSvg);
-        
+
       } catch (error) {
         setErr(true);
+      
       } finally {
         setLoading(false);
       }
@@ -65,6 +64,10 @@ export default function ProjectMini({skill} : {skill: string}){
       </button>
     </div>
   );
+  // sort the data based on the tag
+  data.sort((a: proj, b: proj)=> 
+    (a.repositoryTopics.indexOf(skill)===-1?1:0) - (b.repositoryTopics.indexOf(skill)===-1?1:0)
+  )
 
   return (
   <div className="grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] gap-4">

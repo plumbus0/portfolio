@@ -48,9 +48,8 @@ export default function RootLayout({
               showSpinner={false}
             />
           </div>
-
-          <div className="z-[-1] absolute w-[100%] h-[100%]">
-          </div>
+          {/* <div className="z-[-1] absolute w-[100%] h-[100%]">
+          </div> */}
           {children}
         </div>
         
