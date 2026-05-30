@@ -83,7 +83,7 @@ export default function ProjectMini({skill} : {skill: string}){
           <span className="ProjCard bottom-right"></span>
           
           <div className="proj-display w-full">
-            <div className="w-full text-center font-bold">
+            <div className="w-full text-center font-bold text-[var(--col2)]">
               <h2>{e.name}</h2>
             </div>
 

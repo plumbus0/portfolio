@@ -76,7 +76,7 @@ export function Project({ projProp, view }: {
         {/* lil window */}
           <ProjectPreview p={projProp}></ProjectPreview>
         <div className="flex flex-col font-bold pointer-events-auto p-2 w-[90%] mx-[5%] bg-[var(--background)] mb-4 m-2 px-2 flex items-center border-[var(--txt)] pointer-events-auto border-3 border-dashed">
-          <h3>{projProp.description}</h3>
+          <h3 className="text-[var(--col2)]">{projProp.description}</h3>
           <div className="w-full">
             {/* tags */}
             <div className="mt-1 mt-1 border-2 border-dashed w-[100%] text-[var(--colTran)]"></div>
