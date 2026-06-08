@@ -20,11 +20,12 @@ const oneMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Arya's portfolio",
-  description: "Arya prakash portfolio website",
+  description:
+    "CS student at UNSW Sydney building full-stack web apps, real-time systems, and developer tools. Open to software engineering internships in Sydney.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
 };
 
